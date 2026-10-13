@@ -27,6 +27,7 @@
         }
     </script>
     <style>
+        /* Custom Scrollbar for visual appeal */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
@@ -35,19 +36,16 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <!-- Basic Facebook Comments SDK (No App ID Required) -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
-
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-center h-20">
-                <!-- University Logo Placeholder -->
+                <!-- University Logo Placeholder (No text title) -->
                 <img src="./VU.png" alt="University Logo" class="h-14 object-contain">
             </div>
         </div>
     </header>
 
+    <!-- Page Context Hero (Optional but helps UI) -->
     <section class="bg-university-900 text-white py-12 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-3xl sm:text-4xl font-bold mb-4">Student Council Elections 2026</h1>
@@ -57,7 +55,6 @@
         </div>
     </section>
 
-    <!-- Ex-Presidents Messages Section -->
     <section class="max-w-4xl mx-auto px-4 py-12 mt-4">
         <div class="text-center mb-8">
             <h2 class="text-2xl font-bold text-gray-800 mb-2">Words from Our Past Presidents</h2>
@@ -68,8 +65,9 @@
             <div class="p-4 sm:p-6">
                 <!-- 16:9 Video Embed Slot -->
                 <div class="aspect-video bg-slate-800 rounded-lg overflow-hidden relative border border-gray-300 shadow-inner">
+                    <!-- Replace this absolute div with your actual iframe embed -->
                     <div class="absolute inset-0 flex items-center justify-center text-gray-300 text-sm font-medium">
-                        <iframe src="https://vijaybhoomischool-my.sharepoint.com/personal/head-studentaffairs_vijaybhoomi_edu_in/_layouts/15/embed.aspx?UniqueId=83f9fa72-0350-413b-a3ef-21dd7dff0c5d&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="VID-20261013-WA0010.mp4"></iframe>
+                        [Ex-Presidents OneDrive Video Embed Here]
                     </div>
                 </div>
                 
@@ -87,18 +85,18 @@
 
     <footer class="bg-white border-t border-gray-200 mt-12 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            <p>&copy; 2026 University Student Council. All rights reserved.</p>
+            <p>&copy; 2026 Vijaybhoomi University Student Council. All rights reserved.</p>
             <p class="mt-2">Hosted on GitHub Pages</p>
         </div>
     </footer>
 
     <script>
-        // Define the unique data for EVERY position and EVERY candidate
+        // Data Structure: Contains positions and their specific candidates with video embeds
         const electionData = [
             {
                 position: "President",
                 candidates: [
-                    { name: "Kunj Mistry", videoEmbed: "<iframe src=https://vijaybhoomischool-my.sharepoint.com/personal/head-studentaffairs_vijaybhoomi_edu_in/_layouts/15/embed.aspx?UniqueId=b6ab2b25-10f9-46f3-84a8-d97a9cc0d829&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="video_20261013_212115.mp4"></iframe>" },
+                    { name: "Kunj Mistry", videoEmbed: "<iframe src=https://vijaybhoomischool-my.sharepoint.com/personal/head-studentaffairs_vijaybhoomi_edu_in/_layouts/15/embed.aspx?UniqueId=b6ab2b25-10f9-46f3-84a8-d97a9cc0d829&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create", width="640", height="360", frameborder="0", scrolling="no", allowfullscreen title="video_20261013_212115.mp4"></iframe>" },
                     { name: "Neermay Sawant", videoEmbed: "<iframe src=https://vijaybhoomischool-my.sharepoint.com/personal/head-studentaffairs_vijaybhoomi_edu_in/_layouts/15/embed.aspx?UniqueId=cb60da4e-8584-403f-ad11-f34decf66609&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="20261013_132758000_iOS.MP4"></iframe>" }
                 ]
             },
@@ -156,11 +154,11 @@
         const container = document.getElementById('election-posts-container');
         let htmlContent = '';
 
-        // Loop through each position
+        // Loop through each position to build the section
         electionData.forEach(post => {
             htmlContent += `
             <div class="mb-16 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
-                <div class="bg-gray-50 border-b border-gray-200 px-6 py-5">
+                <div class="bg-gray-50 border-b border-gray-200 px-6 py-5 flex items-center justify-between">
                     <h2 class="text-2xl font-bold text-gray-800">${post.position} Candidates</h2>
                 </div>
                 <div class="p-6">
@@ -178,7 +176,7 @@
                                 <h3 class="text-xl font-semibold text-gray-900">${candidate.name}</h3>
                             </div>
                             
-                            <!-- 16:9 Video Container -->
+                            <!-- 16:9 Video Container for Candidate -->
                             <div class="aspect-video bg-slate-800 rounded-md overflow-hidden relative shadow-inner">
                                 <div class="absolute inset-0 flex flex-col items-center justify-center text-sm text-gray-300 font-medium p-4 text-center">
                                     <svg class="w-10 h-10 mb-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
@@ -189,48 +187,35 @@
                 `;
             });
 
-            // Close the grid, add the Facebook commenting section for the specific post
-            const positionId = post.position.replace(/\s+/g, '-').toLowerCase();
+            // Generate a unique URL-safe term for Giscus Mapping based on the position
+            const giscusTerm = encodeURIComponent(`${post.position} Election`);
             
             htmlContent += `
                     </div>
                     
-                    <!-- Commenting Section for this Post -->
+                    <!-- Commenting Section for this Post using Giscus -->
                     <div class="mt-10 pt-8 border-t border-gray-200">
                         <h4 class="text-lg font-semibold text-gray-800 mb-6 flex items-center">
                             <svg class="w-5 h-5 mr-2 text-university-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
                             Discussion: ${post.position}
                         </h4>
                         
-                        <!-- Facebook Comments Plugin -->
-                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 min-h-[150px]">
-                            <div class="fb-comments" 
-                                data-href="https://tjkartha.github.io/election-videos/#${positionId}" 
-                                data-width="100%" 
-                                data-numposts="5">
-                            </div>
-                        </div>
+                        <!-- Giscus Comments via Iframe -->
+                        <iframe 
+                            src="https://giscus.app/widget?repo=tjkartha/election-videos&repoId=R_kgDOVHvOvw&category=General&categoryId=DIC_kwDOVHvOv84DIVV1&mapping=specific&term=${giscusTerm}&theme=light&lang=en" 
+                            width="100%" 
+                            height="400px" 
+                            frameborder="0"
+                            style="border: 1px solid #e5e7eb; border-radius: 0.5rem; background-color: #f9fafb;">
+                        </iframe>
                     </div>
                 </div>
             </div>
             `;
         });
 
-        // Inject the HTML into the page
+        // Inject the built HTML string into the DOM
         container.innerHTML = htmlContent;
-
-        // Tell Facebook to render the dynamically injected comment boxes
-        if (typeof FB !== 'undefined') {
-            FB.XFBML.parse();
-        } else {
-            // Wait for FB SDK to load if it hasn't yet
-            setTimeout(() => {
-                if (typeof FB !== 'undefined') FB.XFBML.parse();
-            }, 1000);
-            setTimeout(() => {
-                if (typeof FB !== 'undefined') FB.XFBML.parse();
-            }, 3000); // secondary fallback
-        }
     </script>
 </body>
 </html>
