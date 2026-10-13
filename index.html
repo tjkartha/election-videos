@@ -27,7 +27,6 @@
         }
     </script>
     <style>
-        /* Custom Scrollbar for visual appeal */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
@@ -39,23 +38,20 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-center h-20">
-                <!-- University Logo Placeholder -->
                 <img src="./VU.png" alt="University Logo" class="h-14 object-contain">
             </div>
         </div>
     </header>
 
-    <!-- Page Context Hero -->
     <section class="bg-university-900 text-white py-12 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-3xl sm:text-4xl font-bold mb-4">Student Council Elections 2026</h1>
             <p class="text-lg text-university-100 max-w-2xl mx-auto">
-                Watch the pitch videos from candidates across all major posts. Drop your questions and feedback in the comments section below each category. Make your vote count!
+                Watch the pitch videos from candidates across all major posts. Make your vote count!
             </p>
         </div>
     </section>
 
-    <!-- Ex-Presidents Section -->
     <section class="max-w-4xl mx-auto px-4 py-12 mt-4">
         <div class="text-center mb-8">
             <h2 class="text-2xl font-bold text-gray-800 mb-2">Words from Our Past Presidents</h2>
@@ -64,11 +60,9 @@
 
         <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
             <div class="p-4 sm:p-6">
-                <!-- 16:9 Video Embed Slot -->
+                <!-- Ex-Presidents Video uses absolute positioning to fit exactly in its 16:9 container -->
                 <div class="aspect-video bg-slate-800 rounded-lg overflow-hidden relative border border-gray-300 shadow-inner">
-                    <div class="absolute inset-0 flex items-center justify-center text-gray-300 text-sm font-medium">
-                        <iframe width="315" height="560" src="https://www.youtube.com/embed/zhLIawg8BEQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/zhLIawg8BEQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 
                 <div class="mt-5 text-center">
@@ -80,7 +74,7 @@
     </section>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" id="election-posts-container">
-        <!-- Posts will be dynamically injected here by JavaScript -->
+        <!-- Posts injected here -->
     </main>
 
     <footer class="bg-white border-t border-gray-200 mt-12 py-8">
@@ -91,62 +85,61 @@
     </footer>
 
     <script>
-        // Data Structure: Notice the backticks (`) surrounding every iframe now!
         const electionData = [
             {
                 position: "President",
                 candidates: [
-                    { name: "Kunj Mistry", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/6EPnvT2Pb3g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` },
-                    { name: "Neermay Sawant", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/BD6qS72G404" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
+                    { name: "Kunj Mistry", videoId: "6EPnvT2Pb3g", isPortrait: true },
+                    { name: "Neermay Sawant", videoId: "5RxGsIYwLZ8", isPortrait: true }
                 ]
             },
             {
                 position: "Secretary",
                 candidates: [
-                    { name: "Ayush Choudhury", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` },
-                    { name: "Dishank Hadke", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/5RxGsIYwLZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
+                    { name: "Ayush Choudhury", videoId: "", isPortrait: true },
+                    { name: "Dishank Hadke", videoId: "5RxGsIYwLZ8", isPortrait: true }
                 ]
             },
             {
                 position: "Treasurer",
                 candidates: [
-                    { name: "Ayush Choudhury", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/oyUV7Vumu8I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` },
-                    { name: "Kunj Mistry", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
+                    { name: "Ayush Choudhury", videoId: "oyUV7Vumu8I", isPortrait: true },
+                    { name: "Kunj Mistry", videoId: "", isPortrait: true }
                 ]
             },
             {
                 position: "VP Culture",
                 candidates: [
-                    { name: "Rominesh", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/tWMtA4KdEnw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` },
-                    { name: "Roshan Patel", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
+                    { name: "Rominesh", videoId: "tWMtA4KdEnw", isPortrait: true },
+                    { name: "Roshan Patel", videoId: "", isPortrait: true }
                 ]
             },
             {
                 position: "VP DORF",
                 candidates: [
-                    { name: "Rethika Nadar", videoEmbed: `<iframe width="560" height="315" src="https://www.youtube.com/embed/MKmGWSsekgY?si=pSrRgoUvnYa10n0f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` },
-                    { name: "Shanu Kumar", videoEmbed: `<iframe width="560" height="315" src="https://www.youtube.com/embed/LEhlMRHVAxI?si=Y80U016tn-MkZUy3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` }
+                    { name: "Rethika Nadar", videoId: "MKmGWSsekgY", isPortrait: false },
+                    { name: "Shanu Kumar", videoId: "LEhlMRHVAxI", isPortrait: false }
                 ]
             },
             {
                 position: "VP Marcom",
                 candidates: [
-                    { name: "Bhargavaram Krishnapur", videoEmbed: `<iframe width="560" height="315" src="https://www.youtube.com/embed/Pn9YkjvHYJU?si=05E-1v3ltjyiXX7Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` },
-                    { name: "Laxmi Ghotekar", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/rjE5cDKdZHI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
+                    { name: "Bhargavaram Krishnapur", videoId: "Pn9YkjvHYJU", isPortrait: false },
+                    { name: "Laxmi Ghotekar", videoId: "rjE5cDKdZHI", isPortrait: false }
                 ]
             },
             {
                 position: "VP Sports",
                 candidates: [
-                    { name: "Harsh Adam", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` },
-                    { name: "Venkat Ram Lakshman", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/odU_s8xmsCk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
+                    { name: "Harsh Adam", videoId: "", isPortrait: true },
+                    { name: "Venkat Ram Lakshman", videoId: "odU_s8xmsCk", isPortrait: true }
                 ]
             },
             {
                 position: "VP Sustainability",
                 candidates: [
-                    { name: "Bhargavaram Krishnapur", videoEmbed: `<iframe width="560" height="315" src="https://www.youtube.com/embed/6HvIvqu2eZU?si=vJadk_wlq4zPl8UE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` },
-                    { name: "Rebekah Mathai", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/PHHXb4xxh5s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
+                    { name: "Bhargavaram Krishnapur", videoId: "6HvIvqu2eZU", isPortrait: false },
+                    { name: "Rebekah Mathai", videoId: "PHHXb4xxh5s", isPortrait: true }
                 ]
             }
         ];
@@ -154,7 +147,6 @@
         const container = document.getElementById('election-posts-container');
         let htmlContent = '';
 
-        // Loop through each position to build the section
         electionData.forEach(post => {
             htmlContent += `
             <div class="mb-16 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
@@ -165,8 +157,22 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             `;
 
-            // Loop through the specific candidates for THIS position
             post.candidates.forEach((candidate, index) => {
+                
+                // Dynamically assign classes based on video format
+                // If it's a portrait video, use a 9:16 aspect ratio and limit the width so it isn't huge on desktop
+                const containerClasses = candidate.isPortrait 
+                    ? "aspect-[9/16] w-full max-w-[315px] mx-auto" 
+                    : "aspect-video w-full";
+
+                let videoHtml = '';
+                if (candidate.videoId) {
+                    // Absolute positioning ensures the iframe perfectly scales to the container without cropping
+                    videoHtml = `<iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/${candidate.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                } else {
+                    videoHtml = `<span class="text-gray-400 z-10">Video coming soon</span>`;
+                }
+
                 htmlContent += `
                         <div class="candidate-card bg-white rounded-lg p-5 border border-gray-200 shadow-sm transition hover:shadow-md">
                             <div class="flex items-center mb-4">
@@ -176,73 +182,23 @@
                                 <h3 class="text-xl font-semibold text-gray-900">${candidate.name}</h3>
                             </div>
                             
-                            <!-- 16:9 Video Container for Candidate -->
-                            <div class="aspect-video bg-slate-800 rounded-md overflow-hidden relative shadow-inner">
-                                <div class="absolute inset-0 flex flex-col items-center justify-center text-sm text-gray-300 font-medium p-4 text-center">
-                                    <!-- Play Icon Background -->
-                                    <svg class="w-10 h-10 mb-2 opacity-10 absolute z-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
-                                    
-                                    <div class="z-10 w-full h-full flex items-center justify-center">
-                                        ${candidate.videoEmbed}
-                                    </div>
-                                </div>
+                            <!-- Responsive Video Container -->
+                            <div class="${containerClasses} bg-slate-800 rounded-md overflow-hidden relative shadow-inner flex items-center justify-center">
+                                ${videoHtml}
                             </div>
                         </div>
                 `;
             });
-
-            // Generate a unique URL-safe term for Giscus Mapping based on the position
-            const giscusTerm = encodeURIComponent(`${post.position} Election`);
             
+            // Closing out the grid and post without any comment section
             htmlContent += `
-                    </div>
-                    
-<!-- Commenting Section for this Post using Giscus -->
-                    <div class="mt-10 pt-8 border-t border-gray-200">
-                        <h4 class="text-lg font-semibold text-gray-800 mb-6 flex items-center">
-                            <svg class="w-5 h-5 mr-2 text-university-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
-                            Discussion: ${post.position}
-                        </h4>
-                        
-                        <!-- Empty placeholder div with a unique ID for Giscus to target -->
-                        <div id="comments-${post.position.replace(/\s+/g, '-').toLowerCase()}" class="w-full min-h-[300px]"></div>
                     </div>
                 </div>
             </div>
             `;
         });
 
-// Inject the built HTML string into the DOM
         container.innerHTML = htmlContent;
-
-        // Safely inject Giscus scripts into the new placeholders
-        electionData.forEach(post => {
-            const positionSlug = post.position.replace(/\s+/g, '-').toLowerCase();
-            const commentsContainer = document.getElementById(`comments-${positionSlug}`);
-            const giscusTerm = `${post.position} Election`;
-
-            if (commentsContainer) {
-                const script = document.createElement('script');
-                script.src = "https://giscus.app/client.js";
-                script.setAttribute("data-repo", "tjkartha/election-videos");
-                script.setAttribute("data-repo-id", "R_kgDOVHvOvw");
-                script.setAttribute("data-category", "General");
-                script.setAttribute("data-category-id", "DIC_kwDOVHvOv84DIVV1");
-                script.setAttribute("data-mapping", "specific");
-                script.setAttribute("data-term", giscusTerm);
-                script.setAttribute("data-strict", "0");
-                script.setAttribute("data-reactions-enabled", "1");
-                script.setAttribute("data-emit-metadata", "0");
-                script.setAttribute("data-input-position", "bottom");
-                script.setAttribute("data-theme", "light");
-                script.setAttribute("data-lang", "en");
-                script.crossOrigin = "anonymous";
-                script.async = true;
-
-                commentsContainer.appendChild(script);
-            }
-        });
-        
     </script>
 </body>
 </html>
