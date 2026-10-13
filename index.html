@@ -39,13 +39,13 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-center h-20">
-                <!-- University Logo Placeholder (No text title) -->
+                <!-- University Logo Placeholder -->
                 <img src="./VU.png" alt="University Logo" class="h-14 object-contain">
             </div>
         </div>
     </header>
 
-    <!-- Page Context Hero (Optional but helps UI) -->
+    <!-- Page Context Hero -->
     <section class="bg-university-900 text-white py-12 sm:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-3xl sm:text-4xl font-bold mb-4">Student Council Elections 2026</h1>
@@ -55,6 +55,7 @@
         </div>
     </section>
 
+    <!-- Ex-Presidents Section -->
     <section class="max-w-4xl mx-auto px-4 py-12 mt-4">
         <div class="text-center mb-8">
             <h2 class="text-2xl font-bold text-gray-800 mb-2">Words from Our Past Presidents</h2>
@@ -65,7 +66,6 @@
             <div class="p-4 sm:p-6">
                 <!-- 16:9 Video Embed Slot -->
                 <div class="aspect-video bg-slate-800 rounded-lg overflow-hidden relative border border-gray-300 shadow-inner">
-                    <!-- Replace this absolute div with your actual iframe embed -->
                     <div class="absolute inset-0 flex items-center justify-center text-gray-300 text-sm font-medium">
                         <iframe width="315" height="560" src="https://www.youtube.com/embed/zhLIawg8BEQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
@@ -91,62 +91,62 @@
     </footer>
 
     <script>
-        // Data Structure: Contains positions and their specific candidates with video embeds
+        // Data Structure: Notice the backticks (`) surrounding every iframe now!
         const electionData = [
             {
                 position: "President",
                 candidates: [
-                    { name: "Kunj Mistry", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/6EPnvT2Pb3g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> },
-                    { name: "Neermay Sawant", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/5RxGsIYwLZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> }
+                    { name: "Kunj Mistry", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/6EPnvT2Pb3g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` },
+                    { name: "Neermay Sawant", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/5RxGsIYwLZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
                 ]
             },
             {
                 position: "Secretary",
                 candidates: [
-                    { name: "Ayush Choudhury", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> },
-                    { name: "Dishank Hadke", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/5RxGsIYwLZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> }
+                    { name: "Ayush Choudhury", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` },
+                    { name: "Dishank Hadke", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/5RxGsIYwLZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
                 ]
             },
             {
                 position: "Treasurer",
                 candidates: [
-                    { name: "Ayush Choudhury", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/oyUV7Vumu8I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> },
-                    { name: "Kunj Mistry", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> }
+                    { name: "Ayush Choudhury", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/oyUV7Vumu8I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` },
+                    { name: "Kunj Mistry", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
                 ]
             },
             {
                 position: "VP Culture",
                 candidates: [
-                    { name: "Rominesh", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/tWMtA4KdEnw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> },
-                    { name: "Roshan Patel", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> }
+                    { name: "Rominesh", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/tWMtA4KdEnw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` },
+                    { name: "Roshan Patel", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
                 ]
             },
             {
                 position: "VP DORF",
                 candidates: [
-                    { name: "Rethika Nadar", videoEmbed: <iframe width="560" height="315" src="https://www.youtube.com/embed/MKmGWSsekgY?si=pSrRgoUvnYa10n0f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> },
-                    { name: "Shanu Kumar", videoEmbed: <iframe width="560" height="315" src="https://www.youtube.com/embed/LEhlMRHVAxI?si=Y80U016tn-MkZUy3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> }
+                    { name: "Rethika Nadar", videoEmbed: `<iframe width="560" height="315" src="https://www.youtube.com/embed/MKmGWSsekgY?si=pSrRgoUvnYa10n0f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` },
+                    { name: "Shanu Kumar", videoEmbed: `<iframe width="560" height="315" src="https://www.youtube.com/embed/LEhlMRHVAxI?si=Y80U016tn-MkZUy3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` }
                 ]
             },
             {
                 position: "VP Marcom",
                 candidates: [
-                    { name: "Bhargavaram Krishnapur", videoEmbed: <iframe width="560" height="315" src="https://www.youtube.com/embed/Pn9YkjvHYJU?si=05E-1v3ltjyiXX7Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> },
-                    { name: "Laxmi Ghotekar", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/rjE5cDKdZHI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> }
+                    { name: "Bhargavaram Krishnapur", videoEmbed: `<iframe width="560" height="315" src="https://www.youtube.com/embed/Pn9YkjvHYJU?si=05E-1v3ltjyiXX7Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` },
+                    { name: "Laxmi Ghotekar", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/rjE5cDKdZHI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
                 ]
             },
             {
                 position: "VP Sports",
                 candidates: [
-                    { name: "Harsh Adam", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> },
-                    { name: "Venkat Ram Lakshman", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/odU_s8xmsCk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> }
+                    { name: "Harsh Adam", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` },
+                    { name: "Venkat Ram Lakshman", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/odU_s8xmsCk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
                 ]
             },
             {
                 position: "VP Sustainability",
                 candidates: [
-                    { name: "Bhargavaram Krishnapur", videoEmbed: <iframe width="560" height="315" src="https://www.youtube.com/embed/6HvIvqu2eZU?si=vJadk_wlq4zPl8UE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> },
-                    { name: "Rebekah Mathai", videoEmbed: <iframe width="315" height="560" src="https://www.youtube.com/embed/PHHXb4xxh5s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> }
+                    { name: "Bhargavaram Krishnapur", videoEmbed: `<iframe width="560" height="315" src="https://www.youtube.com/embed/6HvIvqu2eZU?si=vJadk_wlq4zPl8UE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>` },
+                    { name: "Rebekah Mathai", videoEmbed: `<iframe width="315" height="560" src="https://www.youtube.com/embed/PHHXb4xxh5s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }
                 ]
             }
         ];
@@ -179,8 +179,12 @@
                             <!-- 16:9 Video Container for Candidate -->
                             <div class="aspect-video bg-slate-800 rounded-md overflow-hidden relative shadow-inner">
                                 <div class="absolute inset-0 flex flex-col items-center justify-center text-sm text-gray-300 font-medium p-4 text-center">
-                                    <svg class="w-10 h-10 mb-2 opacity-50" fill="currentColor" viewBox="0 0 20 20"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
-                                    ${candidate.videoEmbed}
+                                    <!-- Play Icon Background -->
+                                    <svg class="w-10 h-10 mb-2 opacity-10 absolute z-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path></svg>
+                                    
+                                    <div class="z-10 w-full h-full flex items-center justify-center">
+                                        ${candidate.videoEmbed}
+                                    </div>
                                 </div>
                             </div>
                         </div>
